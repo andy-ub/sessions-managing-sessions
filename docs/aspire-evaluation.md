@@ -61,11 +61,30 @@ How: one read-only `Get-Process` snapshot, summed by process name into groups. S
 | SQL Server (native) | 1 | 172 |
 
 Limits:
-- One snapshot, idle state. Two more were planned and not taken: one lane in UI verification (test site and browser up), and peak lanes.
+- Idle state. A second snapshot with a test site running follows below. A peak-lanes snapshot was not taken.
 - The groups sum to about 28.4 GB, more than the RAM in use (about 66 % of 31.5 GB). Figures for single processes count shared memory more than once. Read the groups as relative sizes, not exact shares.
 - The file does not record which memory counter was summed.
 
 What it shows: the agent side (Claude desktop app plus node/bun) is about 9.5 GB. The environment side (.NET plus SQL Server) is about 1.2 GB.
+
+### RAM by process group, test site running (11-11-2026, 21:18)
+
+How: the same grouping, summing each process's working set, with a saved script so later snapshots match. One lane's test site and its database were up. About six lanes were open. The shared test browser was closed at that moment, so this is not a full UI-verification state. VS Code was not running. Total used RAM: 77.6 % of 31.5 GB.
+
+| Group | Processes | MB |
+|---|---|---|
+| Other (Windows, services, other apps) | 441 | 13,264 |
+| Claude desktop app | 32 | 8,522 |
+| node / bun (Claude Code CLI, MCP servers, plugins) | 86 | 4,678 |
+| SQL Server (native) | 1 | 2,901 |
+| .NET (test site, build servers) | 21 | 2,333 |
+| Browsers (Chrome, Edge) | 12 | 357 |
+
+Limits: the groups sum to about 31.3 GB against about 24.4 GB in use, for the same shared-memory reason as above. The "Other" group is large in both snapshots and was not broken down.
+
+What it shows: the agent side is about 13.2 GB. The environment side, with a test site and its database working, is about 5.2 GB. The environment's share grows when a site runs, but the agent side stays more than twice as large.
+
+A peak-lanes snapshot was not taken: by the time the measuring was set up, the sprint's work was nearly done and peak load could not be reproduced. The 29-10-2026 trial below (3 working lanes, 71 % used) is the closest figure.
 
 ### RAM for each lane (29-10-2026, 17:32, measured during a trial with 3 lanes; 71 % used at the time)
 
@@ -104,7 +123,7 @@ What it shows: quitting the container runtime freed about 4.4 GB (the WSL VM at 
 
 ## Assessment
 
-**The bottleneck is the agent side, not the environments.** In the 10-11-2026 snapshot the sessions and their tool servers take about 9.5 GB. The environments take about 1.2 GB, and only one test site runs at a time anyway.
+**The bottleneck is the agent side, not the environments.** Idle (10-11-2026), the sessions and their tool servers take about 9.5 GB against about 1.2 GB for the environments. With a test site and its database running (11-11-2026), it is about 13.2 GB against about 5.2 GB. Only one test site runs at a time anyway.
 
 **Aspire would add RAM, not free it.** It runs its own processes: the AppHost, DCP and the dashboard, plus the `aspire agent mcp` server per agent that uses it. Not measured here; this is an assumption based on the architecture page. It manages the environment side, which is the small part. It does not shrink the sessions.
 
@@ -136,4 +155,4 @@ Not worth adopting for this setup now. Aspire solves environment orchestration, 
 - **Several people share the lane setup.** Then a web dashboard, shared resource views and a shared host start to matter.
 - **Runs with no human gate.** If lanes run unattended, headless sessions under an orchestrator lose nothing that matters.
 - **A documented pattern for coding-agent sessions as Aspire resources that keeps a human approval step.** None was found on 10-11-2026.
-- **More RAM, or a measurement that shows the environment side is large.** The two missing snapshots (one lane in UI verification, peak lanes) could change the split above.
+- **More RAM, or a measurement that shows the environment side is large.** A peak-lanes snapshot, not taken, could change the split above.
