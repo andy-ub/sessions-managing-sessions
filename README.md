@@ -1,4 +1,4 @@
-# session-lanes
+# sessions-managing-sessions
 
 How one developer runs a working day with several Claude Code sessions in parallel: one session plans, one runs the work lanes, each work item gets its own session, everything reports back, and only the human approves.
 
