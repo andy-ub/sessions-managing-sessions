@@ -47,13 +47,15 @@ Copy a skill folder into `~/.claude/skills/` (user level) or `<repo>/.claude/ski
 | Skill | What it does |
 |---|---|
 | [`dev-flow`](skills/dev-flow/SKILL.md) | A 13-phase flow for one work item in one lane: spec read, plan agreement, strict TDD, reviews, UI verification, commit and hand-off, with human approval gates. |
-| [`handoff`](skills/handoff/SKILL.md) | Writes a handoff document so a fresh session can continue the work. |
-| [`lgtm`](skills/lgtm/SKILL.md) | A lane records its state in the day file and reports it to its parent. It approves nothing. |
-| [`office-start`](skills/office-start/SKILL.md) | The Orchestrator's morning: what changed since the last working log, today's meetings (optional), and today's plan. |
-| [`office-end`](skills/office-end/SKILL.md) | The Orchestrator's day close: reads every lane's block and appends one Day close to the day file. |
-| [`handover`](skills/handover/SKILL.md) | Hands a coordinating role (Orchestrator or Board Leader) to a fresh session under the same role title. |
+| [`handoff`](skills/handoff/SKILL.md) | Writes a handoff document so a fresh session can continue the work. [Example](examples/handoff.md). |
+| [`lgtm`](skills/lgtm/SKILL.md) | A lane records its state in the day file and reports it to its parent. It approves nothing. [Example](examples/lgtm.md). |
+| [`office-start`](skills/office-start/SKILL.md) | The Orchestrator's morning: what changed since the last working log, today's meetings (optional), and today's plan. [Example](examples/office-start.md). |
+| [`office-end`](skills/office-end/SKILL.md) | The Orchestrator's day close: reads every lane's block and appends one Day close to the day file. [Example](examples/office-end.md). |
+| [`handover`](skills/handover/SKILL.md) | Hands a coordinating role (Orchestrator or Board Leader) to a fresh session under the same role title. [Example](examples/handover.md). |
 
-A day: `/office-start` → `/handoff` (one per item; the Board Leader starts the lane) → lanes report with `/lgtm` → `/office-end`, with `/handover` when a coordinating session's transcript gets long. `/board` is the status view's own command, not a skill ([board.md](docs/pattern/board.md)).
+A day: `/office-start` → `/handoff` (one per item; the Board Leader starts the lane) → lanes report with `/lgtm` → `/office-end`, with `/handover` when a coordinating session's transcript gets long. `/board` is the status view's own command, not a skill ([board.md](docs/pattern/board.md), [example](examples/board.md)).
+
+All six examples follow one fictional day, so you can follow one lane from its handoff to its `/lgtm` block, the day close and its board row: [examples/](examples/office-start.md).
 
 The skills assume a git-ignored scratch folder (`<scratch>/`) and a shared status file (`<shared>/orchestrator-sync.md`). Pick your own paths.
 

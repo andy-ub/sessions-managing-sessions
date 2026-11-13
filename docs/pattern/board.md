@@ -2,7 +2,7 @@
 
 The pattern works with session titles and status files alone ([copy-it.md](copy-it.md)). With many lanes it helps to see them all in one place. A small UI does that: it draws the lanes as a band above the prompt, and opens a lane's detail in a side pane.
 
-It is a personal mod for the Claude desktop app and **its code is not included**. This page describes what it shows and what it reads, so you can build your own view (a script, a terminal status line, a web page) from the same files.
+It is a personal mod for the Claude desktop app and **its code is not included**. A text sample of the band, with five lanes on one day: [examples/board.md](../../examples/board.md). This page describes what it shows and what it reads, so you can build your own view (a script, a terminal status line, a web page) from the same files.
 
 ## The band in the Board Leader session
 

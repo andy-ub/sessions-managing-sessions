@@ -5,7 +5,7 @@ argument-hint: "[role title], e.g. \"Board Leader\". Omit it to keep this sessio
 disable-model-invocation: true
 ---
 
-Hand this session's role to a fresh session. The role keeps one **stable title** (the *role title*), so lanes, other coordinating sessions and pending handoffs keep reaching whoever holds it. Use it when the transcript gets long ([topology](../../docs/pattern/topology.md)).
+Hand this session's role to a fresh session. The role keeps one **stable title** (the *role title*), so lanes, other coordinating sessions and pending handoffs keep reaching whoever holds it. Use it when the transcript gets long ([topology](../../docs/pattern/topology.md)). Example (constructed): [examples/handover.md](../../examples/handover.md).
 
 **Coordinating session:** a session that dispatches sessions and receives their reports. In this repo that is the [Orchestrator](../../roles/orchestrator.md) or the [Board Leader](../../roles/board-leader.md). It is a role, not a title.
 

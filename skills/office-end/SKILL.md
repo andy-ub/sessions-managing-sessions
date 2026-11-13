@@ -7,6 +7,8 @@ disable-model-invocation: true
 
 # /office-end
 
+Example output: [examples/office-end.md](../../examples/office-end.md).
+
 Day close, **Orchestrator only** ([orchestrator role](../../roles/orchestrator.md)). Scope among the wrap-ups:
 - [/lgtm](../lgtm/SKILL.md) = one **lane session** records its state (one block per run, several per day).
 - [/handoff](../handoff/SKILL.md) = a **session** hands work to another session.

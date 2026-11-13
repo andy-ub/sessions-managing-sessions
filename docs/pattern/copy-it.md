@@ -27,11 +27,11 @@ Add each piece when you feel the problem it solves, not before.
 /office-start → /handoff (one per item, starts a lane) → lanes report with /lgtm → /office-end
 ```
 
-- **[/office-start](../../skills/office-start/SKILL.md):** the Orchestrator builds the plan from yesterday's day file, the tracker, open PRs and (optionally) your calendar.
-- **[/handoff](../../skills/handoff/SKILL.md):** the Orchestrator writes a handoff file for an item. The Board Leader starts a fresh session on it, on your words.
-- **[/lgtm](../../skills/lgtm/SKILL.md):** a lane appends its state to the day file and reports to its parent. It approves nothing.
-- **[/office-end](../../skills/office-end/SKILL.md):** the Orchestrator closes the day from every lane's block. The day file is append-only and becomes tomorrow's starting point ([status-files.md](status-files.md#day-file)).
-- **[/handover](../../skills/handover/SKILL.md):** when the Orchestrator's or the Board Leader's transcript gets long, a fresh session takes the role under the same title.
+- **[/office-start](../../skills/office-start/SKILL.md):** the Orchestrator builds the plan from yesterday's day file, the tracker, open PRs and (optionally) your calendar. [Example](../../examples/office-start.md).
+- **[/handoff](../../skills/handoff/SKILL.md):** the Orchestrator writes a handoff file for an item. The Board Leader starts a fresh session on it, on your words. [Example](../../examples/handoff.md).
+- **[/lgtm](../../skills/lgtm/SKILL.md):** a lane appends its state to the day file and reports to its parent. It approves nothing. [Example](../../examples/lgtm.md).
+- **[/office-end](../../skills/office-end/SKILL.md):** the Orchestrator closes the day from every lane's block. The day file is append-only and becomes tomorrow's starting point ([status-files.md](status-files.md#day-file)). [Example](../../examples/office-end.md).
+- **[/handover](../../skills/handover/SKILL.md):** when the Orchestrator's or the Board Leader's transcript gets long, a fresh session takes the role under the same title. [Example](../../examples/handover.md).
 
 Each session's instructions: [roles/](../../roles/contract.md).
 

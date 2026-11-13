@@ -7,6 +7,8 @@ disable-model-invocation: true
 
 # /lgtm
 
+Example output: [examples/lgtm.md](../../examples/lgtm.md).
+
 **/lgtm approves nothing.** The human typing it means "record where this session stands", not "go". It is never consent for a pending confirm-first action (tracker state or field edit, push, PR, merge, delete, outward comment, resource release). Those stay pending: list them under **Next** as `awaiting the human's go: …` and wait for the human's own words for each. In files and messages write "session state recorded (/lgtm)", never "approved". See [rule 1](../../docs/pattern/rules.md).
 
 Scope among the wrap-ups:

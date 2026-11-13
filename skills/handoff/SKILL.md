@@ -7,6 +7,8 @@ disable-model-invocation: true
 
 Write a handoff document that summarises the current conversation so a fresh agent can continue the work.
 
+Example output: [examples/handoff.md](../../examples/handoff.md).
+
 ## Where to save it
 - Default: the day folder `<scratch>/daily/{YYYY-MM}/{DD}/handoff-{slug}.md`, where `<scratch>` is a git-ignored work folder in your workspace (create the folders if missing). One folder per working day lets the end-of-day close find every handoff in one place.
 - If the handoff belongs to one work item, save it in that item's scratch folder instead.

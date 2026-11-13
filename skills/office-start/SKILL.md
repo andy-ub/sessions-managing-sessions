@@ -7,6 +7,8 @@ disable-model-invocation: true
 
 # /office-start
 
+Example output: [examples/office-start.md](../../examples/office-start.md).
+
 Morning briefing. Teammates in other time zones merge and comment while you are offline, so the state this morning differs from last night. This command reconciles that gap and proposes today's plan. It is the Orchestrator's first step of the day ([orchestrator role](../../roles/orchestrator.md)).
 
 ## Prerequisites
