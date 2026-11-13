@@ -32,6 +32,8 @@ Three rules hold it together:
 - [Status files: the shared sync file and the day file](docs/pattern/status-files.md)
 - [What it costs: LLM vs script](docs/pattern/cost.md)
 - [Before and after (observations)](docs/pattern/results.md)
+- [What one lane runs: the 13 phases and what each is built on](docs/dev-flow-overview.md)
+- [What RAM it takes](docs/ram.md)
 - [The board: a status view on top of the files](docs/pattern/board.md)
 
 ## Role instructions
@@ -66,6 +68,7 @@ The skills assume a git-ignored scratch folder (`<scratch>/`) and a shared statu
 - The code of the board UI (a band above the prompt and a lane detail pane). It is a personal mod; [board.md](docs/pattern/board.md) describes what it shows and reads, and the pattern works without it.
 ## Credits
 - `skills/handoff` is derived from the `handoff` skill in [mattpocock/skills](https://github.com/mattpocock/skills) (MIT). `dev-flow` recommends the `grill-me` skill from the same repository. See [NOTICE](NOTICE).
+- `dev-flow` phases build on skills from [obra/superpowers](https://github.com/obra/superpowers) and [everything-claude-code](https://github.com/affaan-m/everything-claude-code). They are not included; see [the overview](docs/dev-flow-overview.md).
 
 ## License
 Not chosen yet: see [LICENSE](LICENSE).

@@ -7,7 +7,7 @@ Machine and setup: Windows 11, 32 GB RAM, Claude desktop app.
 ## What changed
 
 - **Before:** items moved through one at a time, and I kept every item's state in my head.
-- **After:** several lanes run side by side (up to six on one day so far), and I open only the lanes that are waiting on me ([tags-and-titles.md](tags-and-titles.md)).
+- **After:** several lanes work at the same time (up to seven at once so far), and I open only the lanes that are waiting on me ([tags-and-titles.md](tags-and-titles.md)).
 
 There are no output numbers here on purpose. Items differ a lot in size, and a count of finished items is not a fair yardstick for anyone, the author included. The numbers on this page are about what the setup costs to run.
 
@@ -44,6 +44,7 @@ Open question: how do you keep approvals from piling up on one person?
 - "In parallel" means the lane had at least one model turn that local day, not that lanes ran at the same instant. A lane waiting on review with no turn that day is not counted.
 - The average is over the five working days of the week; weekend turns are left out of it.
 - Weeks 13-10 and 20-10 have no lanes under the title rule. Delivery then ran through the pipeline's own sessions, which are not counted as lanes.
+- **"Up to seven at once"** is a different, stricter measure: lanes working at the same moment, counted from the transcripts. A lane counts as working while its turns are less than 10 minutes apart. The peak was 7, on 12-11-2026 and again on 13-11-2026, after the four weeks in the table.
 
 **Tokens**
 

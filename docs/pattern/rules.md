@@ -51,7 +51,7 @@ How it works:
 - A lane claims an exclusive resource with a `CLAIM` line in the shared status file and releases it with a `RELEASE` line ([status-files.md](status-files.md)). If another lane holds it, the lane tags itself `WAIT` and the Board Leader decides the order.
 - A timing-sensitive step (for example a performance measurement) runs alone on the database server.
 - The Board Leader opens a new lane only with enough free RAM. The thresholds used on one machine (Windows 11, 32 GB RAM): at least 8 GB free to open a lane; at 80–85 % used, no new lane; at 88 % or more, tell the human and hold heavy steps. These are working settings, not measured limits.
-- RAM per lane and the lane ceiling on one 32 GB machine were measured on single days: see [solo-vs-team-lanes.md](../solo-vs-team-lanes.md#ram-per-lane). They are single samples, not a capacity test.
+- RAM per lane and the lane ceiling on one 32 GB machine were measured on single days: see [solo-vs-team-lanes.md](../solo-vs-team-lanes.md#ram-per-lane) and [ram.md](../ram.md). They are snapshots, not a capacity test.
 
 Lesson: there was one test browser, and every lane needed a cloud check. To avoid logging in several times, two items were verified in one lane. At the gate the evidence was mixed up, so rule 2 was broken too. A resource conflict pushed us into a bad batching decision. Now each lane verifies its own item, the Board Leader queues the browser, and batching needs a stated reason.
 

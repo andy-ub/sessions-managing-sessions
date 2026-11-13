@@ -36,6 +36,17 @@ Coordination = the Orchestrator and the Board Leader sessions together ([topolog
 
 How it was counted, and what is missing: [results.md](results.md#data-notes).
 
+## What the 19 % buys
+
+About 19 % is the price of letting sessions manage sessions. What it pays for, as experienced by one developer (not measured, except where a number is given):
+
+- **You stop being the memory.** You no longer hold every item's state in your head; each lane keeps its own, and the day file carries it to tomorrow.
+- **You only look where you are needed.** The tags say which lanes wait on you ([tags-and-titles.md](tags-and-titles.md)). Everything else is working or waiting on someone else.
+- **One item, one clean context.** A lane never mixes two items' evidence or decisions ([rule 2](rules.md#rule-2-one-lane--one-parent-item)).
+- **No fights over shared things.** One owner for the browser, the database server, ports and RAM, so lanes do not step on each other's deploys or tabs ([rule 3](rules.md#rule-3-shared-resources-have-one-owner)).
+- **Approvals stay yours.** Lanes stop at fixed gates, and nothing upstream can approve for you ([rule 1](rules.md#rule-1-only-your-own-words-are-a-go)).
+- **More in flight at once.** Up to seven lanes working at the same moment (12-11-2026), not seven spread over a day ([how it was counted](results.md#data-notes)).
+
 ## The idle-hook lesson
 
 What happened (observation, one weekend, 06-11-2026 20:00 to 08-11-2026 22:00):
