@@ -26,11 +26,11 @@ flowchart TD
 
 | Layer | Owns | Does not do |
 |---|---|---|
-| **Orchestrator** (one session, stable title) | Opening and closing the day. Plan against reality: the tracker, open PRs, sprint load. Writing a handoff file per item (through side sessions it starts). Tracker updates outside any lane. Drafts for teammates (you post them). Reviewing the Board Leader's plans. | Start lanes, claim shared resources, steer a lane directly. Its OK on a plan is an opinion, not a go. |
-| **Board Leader** (one session, stable title) | Starting lanes, on your own words only. Shared resources: RAM, the shared browser, the database server and clones, local ports. Relaying `CHECK`, `GATE` and `CLOUD` to you. Following each lane through PR, review, merge, deploy, cloud check and close. | Run an item's dev flow itself, edit code or work items for a lane, merge for a lane. |
-| **Lane** (one session per item, own git worktree) | One parent item: its child tasks and one PR per supported version ([rule 2](rules.md#rule-2-one-lane--one-parent-item)). It runs your dev flow ([dev-flow skill](../../skills/dev-flow/SKILL.md)) and stops only at agreed points. | Work on a second item, or take a go from anyone but you. |
+| **Orchestrator** (one session, stable title; [role file](../../roles/orchestrator.md)) | Opening and closing the day. Plan against reality: the tracker, open PRs, sprint load. Writing a handoff file per item (through side sessions it starts). Tracker updates outside any lane. Drafts for teammates (you post them). Reviewing the Board Leader's plans. | Start lanes, claim shared resources, steer a lane directly. Its OK on a plan is an opinion, not a go. |
+| **Board Leader** (one session, stable title; [role file](../../roles/board-leader.md)) | Starting lanes, on your own words only. Shared resources: RAM, the shared browser, the database server and clones, local ports. Relaying `CHECK`, `GATE` and `CLOUD` to you. Following each lane through PR, review, merge, deploy, cloud check and close. | Run an item's dev flow itself, edit code or work items for a lane, merge for a lane. |
+| **Lane** (one session per item, own git worktree; [role file](../../roles/lane.md)) | One parent item: its child tasks and one PR per supported version ([rule 2](rules.md#rule-2-one-lane--one-parent-item)). It runs your dev flow ([dev-flow skill](../../skills/dev-flow/SKILL.md)) and stops only at agreed points. | Work on a second item, or take a go from anyone but you. |
 
-Any dev or verify work on an item, even a small one, runs as a lane. The Orchestrator keeps only work that touches no code and no environment.
+Any dev or verify work on an item, even a small one, runs as a lane. The Orchestrator keeps only work that touches no code and no environment. The full rules are in the [contract](../../roles/contract.md).
 
 ## Folding to two layers
 
@@ -63,7 +63,7 @@ Observed on the Claude desktop app (Windows 11), which gives a session tools to 
 
 ### Handing a coordinating role over
 
-When a coordinating session's transcript gets long, a fresh session takes over the role:
+When a coordinating session's transcript gets long, a fresh session takes over the role ([/handover](../../skills/handover/SKILL.md)):
 
 - The old session writes a handover with every open lane: title, session id, state.
 - It renames itself off the role title, so only the new session holds it.

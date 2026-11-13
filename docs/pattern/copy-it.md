@@ -24,15 +24,16 @@ Add each piece when you feel the problem it solves, not before.
 ### Day rhythm
 
 ```
-open the day → /handoff (one per item, starts a lane) → lanes report with /lgtm → close the day
+/office-start → /handoff (one per item, starts a lane) → lanes report with /lgtm → /office-end
 ```
 
-- **Open the day:** the Orchestrator builds the plan from yesterday's day file, the tracker, open PRs and your calendar.
-- **[/handoff](../../skills/handoff/SKILL.md):** the Orchestrator writes a handoff file for an item. A fresh session reads it and starts the work.
+- **[/office-start](../../skills/office-start/SKILL.md):** the Orchestrator builds the plan from yesterday's day file, the tracker, open PRs and (optionally) your calendar.
+- **[/handoff](../../skills/handoff/SKILL.md):** the Orchestrator writes a handoff file for an item. The Board Leader starts a fresh session on it, on your words.
 - **[/lgtm](../../skills/lgtm/SKILL.md):** a lane appends its state to the day file and reports to its parent. It approves nothing.
-- **Close the day:** the Orchestrator closes the day from every lane's block. The day file is append-only and becomes tomorrow's starting point ([status-files.md](status-files.md#day-file)).
+- **[/office-end](../../skills/office-end/SKILL.md):** the Orchestrator closes the day from every lane's block. The day file is append-only and becomes tomorrow's starting point ([status-files.md](status-files.md#day-file)).
+- **[/handover](../../skills/handover/SKILL.md):** when the Orchestrator's or the Board Leader's transcript gets long, a fresh session takes the role under the same title.
 
-The open and close steps are not included as skills here; a short prompt to the Orchestrator does the job.
+Each session's instructions: [roles/](../../roles/contract.md).
 
 ## Questions
 

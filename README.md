@@ -34,6 +34,11 @@ Three rules hold it together:
 - [Before and after (observations)](docs/pattern/results.md)
 - [The board: a status view on top of the files](docs/pattern/board.md)
 
+## Role instructions
+The instruction files each coordinating session and lane follows. Point a session at its file when it starts.
+- [Contract: the layers, rules, titles and duties](roles/contract.md)
+- [Orchestrator](roles/orchestrator.md) · [Board Leader](roles/board-leader.md) · [Lane](roles/lane.md)
+
 ## Skills
 Copy a skill folder into `~/.claude/skills/` (user level) or `<repo>/.claude/skills/` (project level).
 
@@ -42,6 +47,11 @@ Copy a skill folder into `~/.claude/skills/` (user level) or `<repo>/.claude/ski
 | [`dev-flow`](skills/dev-flow/SKILL.md) | A 13-phase flow for one work item in one lane: spec read, plan agreement, strict TDD, reviews, UI verification, commit and hand-off, with human approval gates. |
 | [`handoff`](skills/handoff/SKILL.md) | Writes a handoff document so a fresh session can continue the work. |
 | [`lgtm`](skills/lgtm/SKILL.md) | A lane records its state in the day file and reports it to its parent. It approves nothing. |
+| [`office-start`](skills/office-start/SKILL.md) | The Orchestrator's morning: what changed since the last working log, today's meetings (optional), and today's plan. |
+| [`office-end`](skills/office-end/SKILL.md) | The Orchestrator's day close: reads every lane's block and appends one Day close to the day file. |
+| [`handover`](skills/handover/SKILL.md) | Hands a coordinating role (Orchestrator or Board Leader) to a fresh session under the same role title. |
+
+A day: `/office-start` → `/handoff` (one per item; the Board Leader starts the lane) → lanes report with `/lgtm` → `/office-end`, with `/handover` when a coordinating session's transcript gets long. `/board` is the status view's own command, not a skill ([board.md](docs/pattern/board.md)).
 
 The skills assume a git-ignored scratch folder (`<scratch>/`) and a shared status file (`<shared>/orchestrator-sync.md`). Pick your own paths.
 
@@ -54,8 +64,6 @@ The skills assume a git-ignored scratch folder (`<scratch>/`) and a shared statu
 
 ## Not included
 - The code of the board UI (a band above the prompt and a lane detail pane). It is a personal mod; [board.md](docs/pattern/board.md) describes what it shows and reads, and the pattern works without it.
-- The end-of-day close, the morning plan and the orchestrator handover skills. The day file format they share is in [day-file-rules.md](skills/lgtm/day-file-rules.md).
-
 ## Credits
 - `skills/handoff` is derived from the `handoff` skill in [mattpocock/skills](https://github.com/mattpocock/skills) (MIT). `dev-flow` recommends the `grill-me` skill from the same repository. See [NOTICE](NOTICE).
 

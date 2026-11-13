@@ -35,4 +35,4 @@ The next session's **first actions** are always:
 
 **When a lane replaces itself:** before you stop, message the parent once: "Handing over to a new session; handoff at `<path>`. Please don't send me new work." The new session's announcement reconnects the lane.
 
-**When the session being replaced is the Orchestrator or the Board Leader itself:** use a dedicated handover procedure, so the role title, the open lanes and the shared status file move to the successor in one step. That procedure is not included here.
+**When the session being replaced is the Orchestrator or the Board Leader itself:** use [/handover](../handover/SKILL.md) instead, so the role title, the open lanes and the shared status file move to the successor in one step.
