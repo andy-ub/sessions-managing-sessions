@@ -1,8 +1,15 @@
-# One month in numbers
+# Before and after
 
-These are observations from one developer's work over four weeks, 13-10-2026 to 09-11-2026, counted on 09-11-2026. They are not proof that the pattern caused the change. Read the [data notes](#data-notes) before quoting any of them.
+These are observations from one developer's work over four weeks, 13-10-2026 to 09-11-2026. They are not proof that the pattern caused the change. Read the [data notes](#data-notes) before quoting any number.
 
 Machine and setup: Windows 11, 32 GB RAM, Claude desktop app.
+
+## What changed
+
+- **Before:** items moved through one at a time, and I kept every item's state in my head.
+- **After:** several lanes run side by side (up to six on one day so far), and I open only the lanes that are waiting on me ([tags-and-titles.md](tags-and-titles.md)).
+
+There are no output numbers here on purpose. Items differ a lot in size, and a count of finished items is not a fair yardstick for anyone, the author included. The numbers on this page are about what the setup costs to run.
 
 ## By week
 
@@ -12,32 +19,24 @@ Weeks run Tuesday to Monday, five working days each.
 |---|---|---|---|---|
 | Setup | early pipeline (pilot) | pipeline on real items | board trial | board lanes |
 | Lanes in parallel, peak / avg per working day | – | – | 3 / 1.6 | 6 / 3.0 |
-| Items to "ready for acceptance" | 1 | 1 | 3 | 10 |
 | Coordination tokens vs coordination + lane tokens | – | – | 52 % | 29 % |
-| Approvals given ("go") | 3 | 7 | 10 | 22 |
 
 "Setup" in short: in the first two weeks, each item ran through a multi-role pipeline (a leader session plus builder sessions per item), with an orchestrator session and handoffs already in place. The board trial started on 29-10, with three lanes under a coordinating session. The three-layer form ([topology.md](topology.md)) ran from 04-11.
+
+Coordination behaves like a fixed cost: as lanes doubled, its share against lane tokens fell. Share of all tokens: [cost.md](cost.md#coordination-share).
 
 ## Honest framing
 
 - This was built step by step over about a month: the pipeline first, the lanes after. The last week was the first full week of real lanes, and things were still being fixed daily.
-- The first two weeks are low partly because the developer was building the tooling itself. Read the table as investment, then payoff, not as "parallel sessions made one person 10× faster".
-- An orchestrator and handoffs existed in the first two weeks, and output stayed at one item a week. The jump came when items ran as parallel lanes under a managing session. A status view helps keep many lanes in sight; it is part of the gain, not the cause.
+- An orchestrator and handoffs existed in the first two weeks, and items still moved one at a time. The change came when items ran as parallel lanes under a managing session. A status view helps keep many lanes in sight; it is part of the change, not the cause.
 
 ## The human is the bottleneck
 
-Approvals per finished item went down, from about 3.3 (10 / 3) to 2.2 (22 / 10). Total approvals rose every week: 3, 7, 10, 22. The job moved from remembering and doing to deciding, and decisions now queue on one person. "I no longer hold every item's state in my head" is personal experience, not a measured fact.
+Each item needs fewer approvals than before, but with more lanes there are more approvals in total. The job moved from remembering and doing to deciding, and decisions now queue on one person. "I no longer hold every item's state in my head" is personal experience, not a measured fact.
 
 Open question: how do you keep approvals from piling up on one person?
 
 ## Data notes
-
-**Items**
-
-- Only the developer's own parent items are counted. A teammate's own items are not included, even when they were in the same sprint.
-- An item counts in the week it reached "ready for acceptance" (handed to the PM to accept), as recorded in the day files and status files.
-- One of the 10 items in the last week was later sent back (not accepted). It is still counted in that week.
-- Item sizes differ by week, and so does sprint timing.
 
 **Lanes in parallel**
 
@@ -52,17 +51,10 @@ Open question: how do you keep approvals from piling up on one person?
 - Coordination = the Orchestrator and Board Leader sessions. The share is not countable in the first two weeks, because there were no lanes.
 - The week from 27-10 includes three trial days in which the Orchestrator still did lane work itself, which raises its share.
 - Some work sessions ran outside the lane title format and count as "other work", not lanes. Counted as lanes, they would lower the coordination share.
-- Share of all tokens, and the two-week figures: [cost.md](cost.md#coordination-share).
-
-**Approvals**
-
-- Counted by text search over end-of-day records, for phrases that record the human's go.
-- The count may double-count a go recorded by two sessions, and it misses approvals given only in chat.
-- Eight days in the period have no end-of-day record. Their approvals are not countable, which is not the same as zero.
 
 **What is missing**
 
-- PRs merged per week are left out on purpose: the count depends on when the reviewer gets to them and is noisy.
+- Output counts (finished items, approvals) are left out on purpose: see [What changed](#what-changed).
 - Idle cost was measured only from 06-11-2026 ([cost.md](cost.md#the-idle-hook-lesson)).
 - RAM per lane and the lane ceiling are single-day samples, not a capacity test ([solo-vs-team-lanes.md](../solo-vs-team-lanes.md#ram-per-lane)).
 - Each week is a single data point. No control period, no second developer.

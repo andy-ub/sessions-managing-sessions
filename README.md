@@ -31,7 +31,7 @@ Three rules hold it together:
 - [Stop tags and session titles](docs/pattern/tags-and-titles.md)
 - [Status files: the shared sync file and the day file](docs/pattern/status-files.md)
 - [What it costs: LLM vs script](docs/pattern/cost.md)
-- [One month in numbers (observations)](docs/pattern/results.md)
+- [Before and after (observations)](docs/pattern/results.md)
 - [The board: a status view on top of the files](docs/pattern/board.md)
 
 ## Skills

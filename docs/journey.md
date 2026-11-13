@@ -70,7 +70,7 @@ A note on the "about 3 lanes" ceiling: it was measured later, on 29-10-2026, wit
 
 **One observation that confirmed rule 1.** On 06-11-2026 the host's auto-mode safety check in the Board Leader refused to forward a merge go that the Orchestrator had relayed, even with my exact words quoted. Since then, a merge or push go is typed by me in the session that acts.
 
-**Where it stands.** Coordination was about 19 % of all tokens over two weeks ([pattern/cost.md](pattern/cost.md)). My approvals rose every week while approvals per item fell ([pattern/results.md](pattern/results.md#the-human-is-the-bottleneck)). I am the bottleneck now, and that is the next problem.
+**Where it stands.** Coordination was about 19 % of all tokens over two weeks ([pattern/cost.md](pattern/cost.md)). Each item needs fewer approvals, but more lanes mean more approvals in total ([pattern/results.md](pattern/results.md#the-human-is-the-bottleneck)). I am the bottleneck now, and that is the next problem.
 
 ## Rejected ideas
 
